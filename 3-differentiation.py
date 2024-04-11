@@ -1,3 +1,6 @@
+import matplotlib.pyplot as plt
+
+
 def first_derivative(x, y):
     h = abs(x[1] - x[0])
     k = (1/(6*h))
@@ -9,7 +12,13 @@ def first_derivative(x, y):
     return df1, df2, df3, df4
 
 
-xi = [0, 1, 2, 3, 4]
-f_x = [2.0, 3.0, 5.0, 4.0, 6.0]
-df_in_x = first_derivative(xi, f_x)
+xi = [1.25, 1.27, 1.29, 1.31]
+f_x = [4.82835, 4.84418, 4.85989, 4.87523]
+
+df_in_x = list(first_derivative(xi, f_x))
 print(df_in_x)
+
+plt.plot(xi, f_x, c='g')
+plt.plot(xi, df_in_x, c='r')
+
+plt.show()
